@@ -1,0 +1,8 @@
+{
+    "translate_tabs_to_spaces": true,
+    "highlight_line": true,
+    "draw_white_space": "all",
+    "trim_trailing_white_space_on_save": true,
+    "ensure_newline_at_eof_on_save": true,
+    "default_line_ending": "unix",
+}
