@@ -1,5 +1,6 @@
 # PG Deadlocks
 
+```
   SELECT blocked_locks.pid     AS blocked_pid,
   blocked_activity.usename  AS blocked_user,
   blocking_locks.pid     AS blocking_pid,
@@ -23,9 +24,11 @@
 
   JOIN pg_catalog.pg_stat_activity blocking_activity ON blocking_activity.pid = blocking_locks.pid
   WHERE NOT blocked_locks.GRANTED;
+```
 
 # PG ForeignKeys
 
+```
   SELECT 
   n1.nspname AS primary_key_ns, 
   c1.relname AS primary_key_table, 
@@ -38,3 +41,16 @@
   JOIN ONLY pg_catalog.pg_namespace n2 ON n2.oid = c2.relnamespace 
   WHERE c1.relkind = 'r' AND c.contype = 'f' 
   ORDER BY 1,2,3,4; 
+```
+
+# PG index usage
+
+```
+SELECT * FROM pg_catalog.pg_stat_user_indexes; 
+```
+
+# PG Tables list by size
+
+```
+SELECT relname, relpages FROM pg_class ORDER BY relpages DESC; 
+```
