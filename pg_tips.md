@@ -1,6 +1,6 @@
 # PG Deadlocks
 
-```
+```sql
   SELECT blocked_locks.pid     AS blocked_pid,
   blocked_activity.usename  AS blocked_user,
   blocking_locks.pid     AS blocking_pid,
@@ -28,7 +28,7 @@
 
 # PG ForeignKeys
 
-```
+```sql
   SELECT 
   n1.nspname AS primary_key_ns, 
   c1.relname AS primary_key_table, 
@@ -45,12 +45,12 @@
 
 # PG index usage
 
-```
+```sql
 SELECT * FROM pg_catalog.pg_stat_user_indexes; 
 ```
 
 # PG Tables list by size
 
-```
+```sql
 SELECT relname, relpages FROM pg_class ORDER BY relpages DESC; 
 ```
